@@ -5,24 +5,18 @@ import numpy as np
 import os
 from werkzeug.utils import secure_filename
 
-# -----------------------------
-# Initialize Flask
-# -----------------------------
-app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = 'static'
 
-# Create static folder if it doesn't exist
+app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'static/uploads'
+
+
 if not os.path.exists(app.config['UPLOAD_FOLDER']):
     os.makedirs(app.config['UPLOAD_FOLDER'])
 
-# -----------------------------
-# Load trained model
-# -----------------------------
+
 model = load_model("crop_disease_model.h5")
 
-# -----------------------------
-# Define class names (exactly matching dataset folders)
-# -----------------------------
+
 class_names = [
     "Pepper__bell___Bacterial_spot",
     "Pepper__bell___healthy",
@@ -41,18 +35,14 @@ class_names = [
     "Tomato___Spider_mites_Two_spotted"
 ]
 
-# -----------------------------
-# Helper function to preprocess image
-# -----------------------------
+
 def prepare_image(image_path):
-    img = load_img(image_path, target_size=(128,128))  # Resize to match training
-    img_array = img_to_array(img) / 255.0              # Normalize
-    img_array = np.expand_dims(img_array, axis=0)      # Add batch dimension
+    img = load_img(image_path, target_size=(128,128))  
+    img_array = img_to_array(img) / 255.0              
+    img_array = np.expand_dims(img_array, axis=0)      
     return img_array
 
-# -----------------------------
-# Routes
-# -----------------------------
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
@@ -66,7 +56,7 @@ def index():
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(filepath)
 
-            # Preprocess and predict
+            
             img_array = prepare_image(filepath)
             preds = model.predict(img_array)
             class_idx = np.argmax(preds[0])
@@ -79,9 +69,7 @@ def index():
                                    confidence=f"{confidence*100:.2f}%")
     return render_template("index.html")
 
-# -----------------------------
-# Run the app
-# -----------------------------
+
 if __name__ == "__main__":
     print("\n🚀 Flask app running at http://127.0.0.1:5000/\n")
-    app.run(debug=True)
+    app.run(debug=False)
