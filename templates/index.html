@@ -1,13 +1,288 @@
-<!DOCTYPE html>
-<html>
+ <link rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}">
+ 
+ <!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <title>Crop Disease Detection</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgriScan AI | Crop Disease Detection</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
+
 <body>
-    <h2>Upload an Image for Prediction</h2>
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" required>
-        <input type="submit" value="Predict">
-    </form>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+
+        <i class="fa-solid fa-leaf"></i>
+
+        <span>AgriScan AI</span>
+
+    </div>
+
+    <ul>
+
+        <li><a href="#">Home</a></li>
+
+        <li><a href="#">Features</a></li>
+
+        <li><a href="#">About</a></li>
+
+        <li><a href="https://github.com/hp611" target="_blank">GitHub</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+
+            AI Powered Crop Disease Detection
+
+        </h1>
+
+        <p>
+
+            Upload a crop leaf image and let our Deep Learning model
+            identify diseases within seconds with confidence score,
+            treatment recommendations and prevention tips.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= UPLOAD ================= -->
+
+<section class="upload-section">
+
+<form action="/" method="POST" enctype="multipart/form-data">
+
+<div class="upload-card">
+
+<i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+
+<h2>Upload Crop Leaf Image</h2>
+
+<p>
+
+Supported Formats
+
+<br>
+
+PNG • JPG • JPEG
+
+</p>
+
+<input
+type="file"
+name="file"
+accept=".png,.jpg,.jpeg"
+required>
+
+<button type="submit">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+Detect Disease
+
+</button>
+
+</div>
+
+</form>
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+<div class="feature-card">
+
+<i class="fa-solid fa-seedling"></i>
+
+<h3>15 Diseases</h3>
+
+<p>
+
+Detect diseases across Tomato,
+Potato and Pepper crops.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-brain"></i>
+
+<h3>Deep Learning</h3>
+
+<p>
+
+CNN based image classification
+for accurate predictions.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-bolt"></i>
+
+<h3>Fast Prediction</h3>
+
+<p>
+
+Get disease prediction
+within a few seconds.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>Confidence Score</h3>
+
+<p>
+
+Know how confident
+the AI model is.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="how-it-works">
+
+<h2>
+
+How It Works
+
+</h2>
+
+<div class="steps">
+
+<div class="step">
+
+<i class="fa-solid fa-image"></i>
+
+<h3>Upload</h3>
+
+<p>
+
+Upload a clear image
+of the crop leaf.
+
+</p>
+
+</div>
+
+<div class="step">
+
+<i class="fa-solid fa-microchip"></i>
+
+<h3>Analyze</h3>
+
+<p>
+
+Our CNN model
+analyzes the image.
+
+</p>
+
+</div>
+
+<div class="step">
+
+<i class="fa-solid fa-stethoscope"></i>
+
+<h3>Result</h3>
+
+<p>
+
+Receive disease name,
+confidence and guidance.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<h2>
+
+<i class="fa-solid fa-leaf"></i>
+
+AgriScan AI
+
+</h2>
+
+<p>
+
+Deep Learning Powered Crop Disease Detection
+
+</p>
+
+<div class="footer-tech">
+
+<span>TensorFlow</span>
+
+<span>Flask</span>
+
+<span>CNN</span>
+
+<span>Python</span>
+
+</div>
+
+<p class="developer">
+
+Developed by <strong>Himanshu Pandey</strong>
+
+</p>
+
+</footer>
+
 </body>
+
 </html>

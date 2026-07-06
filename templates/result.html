@@ -1,18 +1,179 @@
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}">
+      
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Prediction Result</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detection Result | AgriScan AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
+
 <body>
-    <h2>Prediction Result</h2>
 
-    <p><strong>Predicted Class:</strong> {{ prediction }}</p>
-    <p><strong>Confidence:</strong> {{ confidence }}</p>
+<nav>
 
-    <br>
-    <img src="{{ url_for('static', filename=image_file) }}" alt="Uploaded Image" width="300">
+    <div class="logo">
 
-    <br><br>
-    <a href="/">Try Another Image</a>
+        <i class="fa-solid fa-leaf"></i>
+
+        <span>AgriScan AI</span>
+
+    </div>
+
+</nav>
+
+
+<section class="result-page">
+
+<div class="result-container">
+
+
+<div class="image-card">
+
+<h2>
+
+<i class="fa-solid fa-image"></i>
+
+Uploaded Leaf
+
+</h2>
+
+<img src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="Leaf Image">
+
+</div>
+
+
+<div class="prediction-card">
+
+<h2>
+
+<i class="fa-solid fa-microscope"></i>
+
+Disease Detected
+
+</h2>
+
+<h1>
+
+{{ prediction }}
+
+</h1>
+
+<div class="confidence">
+
+Confidence
+
+<h3>
+
+{{ confidence }} %
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="info-grid">
+
+<div class="info-card">
+
+<h2>
+
+<i class="fa-solid fa-book-medical"></i>
+
+Description
+
+</h2>
+
+<p>
+
+{{ description }}
+
+</p>
+
+</div>
+
+
+
+<div class="info-card">
+
+<h2>
+
+<i class="fa-solid fa-capsules"></i>
+
+Treatment
+
+</h2>
+
+<p>
+
+{{ treatment }}
+
+</p>
+
+</div>
+
+
+
+<div class="info-card">
+
+<h2>
+
+<i class="fa-solid fa-shield-virus"></i>
+
+Prevention
+
+</h2>
+
+<p>
+
+{{ prevention }}
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="again">
+
+<a href="/">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Analyze Another Image
+
+</a>
+
+</div>
+
+</section>
+
 </body>
+
 </html>
