@@ -1,59 +1,197 @@
-# Crop Disease Detection Using Deep Learning
+# 🌿 AgriScan AI
+### AI-Powered Crop Disease Detection using Deep Learning
 
-## Overview
-This project is a Deep Learning-based web application that detects crop diseases from leaf images using a Convolutional Neural Network (CNN). The model was trained using TensorFlow and Keras on Google Colab and deployed using Flask.
+<p align="center">
 
-## Features
-- Detects crop diseases from uploaded leaf images.
-- Deep Learning model trained using CNN.
-- Simple and user-friendly Flask web interface.
-- Displays the predicted disease with confidence.
+<img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python">
 
-## Technologies Used
-- Python
-- TensorFlow
-- Keras
-- Flask
-- HTML
-- CSS
+<img src="https://img.shields.io/badge/TensorFlow-Deep%20Learning-orange?style=for-the-badge&logo=tensorflow">
 
-## Project Structure
+<img src="https://img.shields.io/badge/Flask-Web%20Application-black?style=for-the-badge&logo=flask">
+
+<img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-green?style=for-the-badge&logo=opencv">
+
+<img src="https://img.shields.io/badge/License-MIT-success?style=for-the-badge">
+
+</p>
+
+---
+
+## 🌱 Overview
+
+AgriScan AI is a Deep Learning-powered web application that identifies crop diseases from leaf images using a Convolutional Neural Network (CNN).
+
+The application allows farmers and researchers to upload an image of a crop leaf and instantly receive:
+
+- 🌿 Disease Name
+- 📊 Prediction Confidence
+- 📖 Disease Description
+- 💊 Recommended Treatment
+- 🛡 Prevention Tips
+
+The model has been trained using TensorFlow & Keras and deployed using Flask.
+
+---
+
+# ✨ Features
+
+- 🌿 Detects diseases from crop leaf images
+- 🤖 CNN-based Deep Learning model
+- 📊 Displays prediction confidence
+- 📖 Disease description
+- 💊 Treatment recommendations
+- 🛡 Prevention methods
+- 🖼 Beautiful Flask Web Interface
+- ⚡ Fast predictions
+
+---
+
+# 🖥 Tech Stack
+
+| Technology | Usage |
+|------------|-----------------------------|
+| Python | Programming Language |
+| TensorFlow | Deep Learning |
+| Keras | CNN Model |
+| Flask | Backend |
+| HTML | Frontend |
+| CSS | Styling |
+| JavaScript | Frontend Interactivity |
+| OpenCV | Image Processing |
+| Pillow | Image Handling |
+
+---
+
+# 🧠 Model Architecture
+
 ```
-Crop-Disease-Detection-Using-Deep-Learning/
-│── app.py
-│── crop_disease_model.h5
-│── static/
-│── templates/
-│── README.md
+Leaf Image
+      │
+      ▼
+Image Preprocessing
+      │
+      ▼
+CNN Model
+      │
+      ▼
+Disease Prediction
+      │
+      ▼
+Confidence Score
+      │
+      ▼
+Treatment & Prevention
 ```
 
-## How to Run
+---
 
-1. Clone the repository
+# 📂 Project Structure
+
+```
+Crop-Disease-Detection/
+│
+├── app.py
+├── crop_disease_model.h5
+├── requirements.txt
+├── README.md
+│
+├── static/
+│   ├── css/
+│   │      style.css
+│   ├── js/
+│   │      main.js
+│   ├── uploads/
+│   └── images/
+│
+└── templates/
+    ├── index.html
+    └── result.html
+```
+
+---
+
+# 🚀 Installation
+
+Clone the repository
 
 ```bash
-git clone https://github.com/hp611/Crop-Disease-Detection-Using-Deep-Learning.git
+git clone https://github.com/YOUR_USERNAME/AgriScan-AI.git
 ```
 
-2. Install dependencies
+Move into the project
+
+```bash
+cd AgriScan-AI
+```
+
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Run the application
+Run the application
 
 ```bash
 python app.py
 ```
 
-## Future Improvements
+Open your browser
 
-- Support more crop species
-- Improve prediction accuracy
-- Deploy on Render or Hugging Face Spaces
-- Add multilingual support
+```
+http://127.0.0.1:5000
+```
 
-## Author
+---
+
+# 📷 Screenshots
+
+### 🏠 Homepage
+
+> *(Add homepage screenshot here)*
+
+---
+
+### 🌿 Upload Leaf
+
+> *(Add upload page screenshot here)*
+
+---
+
+### 📊 Prediction Result
+
+> *(Add result page screenshot here)*
+
+---
+
+# 🌐 Live Demo
+
+> Coming Soon...
+
+(Will be updated after deployment.)
+
+---
+
+# 🔮 Future Improvements
+
+- 📱 Android Application
+- 🌾 More Crop Support
+- 🌍 Multi-language Interface
+- 📷 Real-time Camera Detection
+- 📊 Disease Severity Analysis
+- 🤖 AI Chatbot for Farmers
+
+---
+
+# 👨‍💻 Author
 
 **Himanshu Pandey**
+
+B.Tech Computer Science (Data Science)
+
+GitHub:
+https://github.com/himanshu-pandey2159
+
+---
+
+## ⭐ If you found this project useful, please consider giving it a Star.
