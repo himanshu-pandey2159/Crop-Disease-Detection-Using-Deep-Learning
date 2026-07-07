@@ -1,10 +1,10 @@
 from flask import Flask, request, render_template
+import tensorflow as tf
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import numpy as np
 import os
 from werkzeug.utils import secure_filename
-
 
 
 app = Flask(__name__)
@@ -18,8 +18,14 @@ if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
 
+try:
+    tf.config.set_visible_devices([], 'GPU')
+except:
+    pass
 
-model = load_model("crop_disease_model.h5")
+print("Loading model...")
+model = load_model("crop_disease_model.h5", compile=False)
+print("Model loaded successfully!")
 
 
 class_names = [
@@ -183,9 +189,14 @@ def index():
 
         try:
 
-            img_array = prepare_image(filepath)
+            print("Image received")
 
+            img_array = prepare_image(filepath)
+            print("Image prepared")
+
+            print("Starting prediction...")
             predictions = model.predict(img_array, verbose=0)
+            print("Prediction completed")
 
             class_index = np.argmax(predictions[0])
 
