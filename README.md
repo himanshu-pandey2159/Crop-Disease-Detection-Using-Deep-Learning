@@ -1,6 +1,8 @@
 # 🌿 AgriScan AI
 ### AI-Powered Crop Disease Detection using Deep Learning
-
+<p align="center">
+  <img src="assets/banner.png" alt="AgriScan AI Banner" width="100%">
+</p>
 <p align="center">
 
 <img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python">
@@ -144,33 +146,23 @@ http://127.0.0.1:5000
 
 ---
 
-# 📷 Screenshots
+## 📷 Screenshots
 
 ### 🏠 Homepage
 
-> *(Add homepage screenshot here)*
+![Homepage](screenshots/home.png)
 
 ---
 
 ### 🌿 Upload Leaf
-
-> *(Add upload page screenshot here)*
-
+![Upload](screenshots/upload.png)
 ---
 
 ### 📊 Prediction Result
 
-> *(Add result page screenshot here)*
+![Result](screenshots/result.png)
 
----
 
-# 🌐 Live Demo
-
-> Coming Soon...
-
-(Will be updated after deployment.)
-
----
 
 # 🔮 Future Improvements
 
